@@ -18,6 +18,9 @@ export class ApiService {
   private keySource = new Subject();
   keyMessage = this.keySource.asObservable();
 
+  private coinSource = new Subject();
+  coinMessage = this.coinSource.asObservable();
+
   constructor(private http: HttpClient) { }
 
   initTicker() {
@@ -27,6 +30,10 @@ export class ApiService {
       this.keys = Object.keys(this.payload.data);
       this.keySource.next(this.keys);
     });
+  }
+
+  coinDetail(detail) {
+    this.coinSource.next(detail);
   }
 
 }

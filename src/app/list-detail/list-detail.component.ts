@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-list-detail',
@@ -7,7 +8,11 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ListDetailComponent implements OnInit {
 
-  constructor() { }
+  coinDetail;
+
+  constructor(private api: ApiService) {
+    this.api.coinMessage.subscribe(message => this.coinDetail = message);
+   }
 
   ngOnInit() {
   }

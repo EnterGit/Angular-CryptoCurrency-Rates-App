@@ -23,7 +23,7 @@ export class ListComponent implements OnInit {
     this.api.initTicker();
 
     setInterval(() => {
-        this.api.initTicker();
+      this.api.initTicker();
     }, 35000);
   }
 
@@ -33,6 +33,6 @@ export class ListComponent implements OnInit {
   }
 
   showDetails(currentItem) {
-    console.log(currentItem);
+    this.api.coinDetail(currentItem);
   }
 }
