@@ -31,4 +31,8 @@ export class ListComponent implements OnInit {
     value < 0 ? this.icon = 'fa-caret-down' : this.icon = 'fa-caret-up';
     return value < 0 ? 'text-danger' : 'text-success';
   }
+
+  showDetails(currentItem) {
+    console.log(currentItem);
+  }
 }
