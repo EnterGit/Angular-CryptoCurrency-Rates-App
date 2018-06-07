@@ -10,6 +10,7 @@ export class ListComponent implements OnInit {
 
   payload;
   keys;
+  icon;
 
   constructor(private api: ApiService) {
     this.api.currentMessage.subscribe(message => {
@@ -27,6 +28,7 @@ export class ListComponent implements OnInit {
   }
 
   getClass(value) {
+    value < 0 ? this.icon = 'fa-caret-down' : this.icon = 'fa-caret-up';
     return value < 0 ? 'text-danger' : 'text-success';
   }
 }
