@@ -1,7 +1,5 @@
-<!-- <div class="row mt-5" *ngIf="payload">
-  <div class="card" *ngFor="let i of payload.data">
-    <div class="card-body">{{ i }}</div>
+<div class="row mt-5" *ngIf="payload">
+  <div class="card" *ngFor="let i of keys">
+    <div class="card-body">{{ payload.data[i].name }}</div>
   </div>
-</div> -->
-
-{{ payload | json }}
+</div>

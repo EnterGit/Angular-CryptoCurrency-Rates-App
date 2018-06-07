@@ -9,10 +9,14 @@ export class ApiService {
 
   URL = 'https://api.coinmarketcap.com/v2';
 
-  payload: any;
+  payload;
+  keys;
 
   private messageSource = new Subject();
   currentMessage = this.messageSource.asObservable();
+
+  private keySource = new Subject();
+  keyMessage = this.keySource.asObservable();
 
   constructor(private http: HttpClient) { }
 
@@ -20,7 +24,8 @@ export class ApiService {
     this.http.get(this.URL + '/ticker/').subscribe(data => {
       this.payload = data;
       this.messageSource.next(this.payload);
-      console.log('API Call');
+      this.keys = Object.keys(this.payload.data);
+      this.keySource.next(this.keys);
     });
   }
 

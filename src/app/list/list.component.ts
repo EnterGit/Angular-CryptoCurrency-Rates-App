@@ -9,9 +9,11 @@ import { ApiService } from '../api.service';
 export class ListComponent implements OnInit {
 
   payload;
+  keys;
 
   constructor(private api: ApiService) {
     this.api.currentMessage.subscribe(message => this.payload = message);
+    this.api.keyMessage.subscribe(message => this.keys = message);
   }
 
   ngOnInit() {
@@ -21,5 +23,4 @@ export class ListComponent implements OnInit {
         this.api.initTicker();
     }, 35000);
   }
-
 }
