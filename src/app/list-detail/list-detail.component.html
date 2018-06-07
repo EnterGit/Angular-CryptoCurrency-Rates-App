@@ -1,9 +1,8 @@
-<div class="row mt-5">
-    <ul class="list-group">
-      <li class="list-group-item">
-        <div class="container">
-            <p>{{ coinDetail | json }}</p>
-        </div>
-      </li>
-    </ul>
-  </div>
+<div class="row custom-card" style="height:570px;">
+    <div class="text-center mt-5" *ngIf="!coinDetail">
+        <h4 class="text-center mt-5"><i>Click on the currency to see more details.</i></h4>
+    </div>
+    <div class="mt-5" *ngIf="coinDetail">
+      <h3 class="text-center">{{ coinDetail.name }} Detail</h3>
+    </div>
+</div>
