@@ -3,6 +3,6 @@
         <h4 class="text-center mt-5"><i>Click on the currency to see more details.</i></h4>
     </div>
     <div class="mt-5" *ngIf="coinDetail">
-      <h3 class="text-center">{{ coinDetail.name }} Detail</h3>
+      <h3 class="text-center"><img src="https://s2.coinmarketcap.com/static/img/coins/64x64/{{coinDetail.id}}.png" class="img-fluid" height="64" width="64">&nbsp;&nbsp;{{ coinDetail.name }} Detail</h3>
     </div>
 </div>

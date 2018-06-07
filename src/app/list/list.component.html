@@ -1,5 +1,5 @@
-<div class="row custom-card" *ngIf="payload">
-  <ul class="list-group" style="overflow-y: scroll; height:570px;">
+<div class="row" *ngIf="payload">
+  <ul class="list-group custom-card" style="overflow-y: scroll; height:570px;">
     <li class="list-group-item click" *ngFor="let i of keys">
       <div class="container" (click)="showDetails(payload.data[i])">
           <h5><img src="https://s2.coinmarketcap.com/static/img/coins/32x32/{{payload.data[i].id}}.png" class="img-fluid" height="32" width="32">&nbsp;&nbsp;<strong>{{ payload.data[i].name }}</strong></h5>
