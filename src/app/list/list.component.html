@@ -1,5 +1,10 @@
 <div class="row mt-5" *ngIf="payload">
-  <div class="card" *ngFor="let i of keys">
-    <div class="card-body">{{ payload.data[i].name }}</div>
-  </div>
+  <ul class="list-group">
+    <li class="list-group-item" *ngFor="let i of keys">
+      <div class="container">
+        <img src="https://s2.coinmarketcap.com/static/img/coins/32x32/{{payload.data[i].id}}.png" height="32" width="32"> <h5><strong>{{ payload.data[i].name }}</strong></h5>
+        <p>$ {{ payload.data[i].quotes.USD.price }} <span [ngClass]="getClass(payload.data[i].quotes.USD.percent_change_24h)">({{ payload.data[i].quotes.USD.percent_change_24h }} %)</span></p>
+      </div>
+    </li>
+  </ul>
 </div>

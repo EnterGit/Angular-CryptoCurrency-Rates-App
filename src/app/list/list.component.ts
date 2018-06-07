@@ -12,7 +12,9 @@ export class ListComponent implements OnInit {
   keys;
 
   constructor(private api: ApiService) {
-    this.api.currentMessage.subscribe(message => this.payload = message);
+    this.api.currentMessage.subscribe(message => {
+      this.payload = message;
+    });
     this.api.keyMessage.subscribe(message => this.keys = message);
   }
 
@@ -22,5 +24,9 @@ export class ListComponent implements OnInit {
     setInterval(() => {
         this.api.initTicker();
     }, 35000);
+  }
+
+  getClass(value) {
+    return value < 0 ? 'text-danger' : 'text-success';
   }
 }
